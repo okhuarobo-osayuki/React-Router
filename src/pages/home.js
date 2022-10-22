@@ -8,9 +8,7 @@ function Home() {
       <h1>Home</h1>
       <Navigation />
       <section>
-        <img src="https://placedog.net/340/380?id=12" alt="random dog" />
-        <img src="https://placedog.net/340/380?id=15" alt="random dog" />
-        <img src="https://placedog.net/340/380?id=22" alt="random dog" />
+        <img src="https://placedog.net/500/380?id=22" alt="random dog" />
       </section>
     </div>
   );

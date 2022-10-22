@@ -5,7 +5,7 @@ import Users from "../pages/users";
 function RouteApp() {
   return <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/user" element={<Users />} />
+    <Route path="/users" element={<Users />} />
   </Routes>;
 }
 export default RouteApp;
