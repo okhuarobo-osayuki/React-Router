@@ -57,9 +57,64 @@ a:hover {
   font-weight: 600;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.error h1 {
+  color: red;
+}
+
+.error p {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error a {
+  background-color: green;
+  color: #fff;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1.5rem;
+}
+
+.error a:hover {
+  background-color: #fff;
+  color: green;
+  border: 0.5px solid #000;
+  font-weight: 600;
+}
+
+.user h2 {
+  position: relative;
+  right: 40rem;
+  top: 4rem;
+  border-bottom: 2px solid #000;
+}
+
+@media screen and (max-width: 680px) {
+  .user h2 {
+    position: relative;
+    right: 8rem;
+  }
+}
+
 @media screen and (min-width: 681px) {
-  img {
+  .main img {
     height: 440px;
     width: 600px;
+  }
+
+  .error img {
+    height: 300px;
+    width: 500px;
   }
 }

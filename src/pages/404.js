@@ -1,13 +1,16 @@
-import { useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../style.css";
 
-function Error() {
-  const error = useRouteError();
-  return (
-    <div className="error">
-      <h1>EWO!</h1>
-      <p>{error.message || error.statusText}</p>
-    </div>
-  );
+//use error boundry to catch errors
+function ErrorFallback() {
+    return (
+        <div role="alert" className="error">
+            <h1>EWO!</h1>
+            <img src="https://placedog.net/300/300?id=50" alt="random dog" />
+            <p><i>Be like you don enter where you nor know</i></p>
+            <p> Oya <Link to={"/"} >start again</Link></p>
+        </div>
+    )
 }
-export default Error;
+
+export default ErrorFallback;

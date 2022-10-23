@@ -1,7 +1,6 @@
 import React from "react";
 import "../style.css";
-// import Navigation from "../components/navigation";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 function Users() {
   return (
@@ -24,6 +23,8 @@ function Users() {
           Users
         </NavLink>
       </div>
+      <Link to="/users/user">Our Users</Link>  
+      <Outlet />
     </div>
   );
 }
