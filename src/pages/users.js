@@ -5,7 +5,6 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 function Users() {
   return (
     <div className="users">
-      <h1>Users</h1>
       <div className="navigation">
         <NavLink to="/">Home</NavLink>
         <NavLink
@@ -23,6 +22,7 @@ function Users() {
           Users
         </NavLink>
       </div>
+      <h1>Users</h1>
       <Link to="/users/user">Our Users</Link>  
       <Outlet />
     </div>

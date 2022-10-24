@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import "../style.css";
 
-//use error boundry to catch errors
-function ErrorFallback() {
+function ErrorPage() {
     return (
         <div role="alert" className="error">
             <h1>EWO!</h1>
@@ -13,4 +12,4 @@ function ErrorFallback() {
     )
 }
 
-export default ErrorFallback;
+export default ErrorPage;

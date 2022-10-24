@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 function Home() {
   return (
     <div className="main">
-      <h1>Home</h1>
       <div className="navigation">
         <NavLink
           style={({ isActive }) =>
@@ -23,6 +22,7 @@ function Home() {
         </NavLink>
         <NavLink to="/users">Users</NavLink>
       </div>
+      <h1>Home</h1>
       <section>
         <img src="https://placedog.net/350/380?id=22" alt="random dog" />
       </section>

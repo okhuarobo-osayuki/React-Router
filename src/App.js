@@ -1,11 +1,23 @@
 import "./style.css";
 import RouteApp from "./routes/routes";
 import { ErrorBoundary } from "react-error-boundary";
-import ErrorFallback from "./pages/404";
+// import { useNavigate } from "react-router-dom";
+
+//set error boundary
+const ErrorFallback = ({ error, resetErrorBoundary }) => {
+  return (
+    <div role="alert" className="errFallBack">
+      <p>Something went wrong:</p>
+      <pre style={{color: 'red'}}>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Reset</button>
+    </div>
+  );
+};
+
 
 function App() {
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
+    <ErrorBoundary FallbackComponent={ErrorFallback} >
       <RouteApp />
     </ErrorBoundary>
   )

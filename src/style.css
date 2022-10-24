@@ -32,7 +32,7 @@ h1 {
 
 .navigation {
   position: relative;
-  bottom: 50px;
+  bottom: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ a:hover {
   font-weight: 600;
 }
 
-.error {
+.error, .errFallBack {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,17 +65,17 @@ a:hover {
   margin-top: 10rem;
 }
 
-.error h1 {
+.error h1, .errFallBack p {
   color: red;
 }
 
-.error p {
+.error p, .errFallBack p {
   font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
 }
 
-.error a {
+.error a, .errFallBack button {
   background-color: green;
   color: #fff;
   padding: 20px 30px;
@@ -98,6 +98,30 @@ a:hover {
   right: 40rem;
   top: 4rem;
   border-bottom: 2px solid #000;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
 
 @media screen and (max-width: 680px) {
