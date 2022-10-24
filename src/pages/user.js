@@ -11,7 +11,6 @@ function User() {
   );
 
   const PER_PAGE = 5;
-  const total = data?.results?.length;
   const pages = 50;
   const skip = page * PER_PAGE - PER_PAGE;
 
