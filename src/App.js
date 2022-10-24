@@ -1,7 +1,7 @@
 import "./style.css";
 import RouteApp from "./routes/routes";
 import { ErrorBoundary } from "react-error-boundary";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //set error boundary
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
@@ -16,8 +16,10 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
 
 
 function App() {
+  const navigate = useNavigate();
+
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback} >
+    <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => navigate("/")}>
       <RouteApp />
     </ErrorBoundary>
   )
