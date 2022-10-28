@@ -10,9 +10,9 @@ function User() {
     `https://randomuser.me/api/?page=${page}&results=10&seed=abc`
   );
 
-  const PER_PAGE = 5;
+  const PER_PAGE = 10;
   const total = data?.results?.length;
-  const pages = 50;
+  const pages = 30;
   const skip = page * PER_PAGE - PER_PAGE;
 
   if (loading) {
@@ -36,7 +36,7 @@ function User() {
           );
         })}
         {
-          <button
+          <button className="prev"
             disabled={page <= 1}
             onClick={() => setPage((prev) => prev - 1)}
           >
@@ -49,7 +49,7 @@ function User() {
           )
         )}
         {
-          <button
+          <button className="next"
             disabled={page >= pages}
             aria-disabled={page >= pages}
             onClick={() => setPage((prev) => prev + 1)}
