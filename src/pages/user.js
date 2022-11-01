@@ -7,13 +7,10 @@ import ErrorPage from "./404";
 function User() {
   const [page, setPage] = useState(1);
   const { loading, error, data } = useFetch(
-    `https://randomuser.me/api/?page=${page}&results=10&seed=abc`
+    `https://randomuser.me/api/?page=${page}&results=5&seed=abc`
   );
 
-  const PER_PAGE = 10;
-  const total = data?.results?.length;
   const pages = 30;
-  const skip = page * PER_PAGE - PER_PAGE;
 
   if (loading) {
     return <Loader />;
@@ -29,35 +26,61 @@ function User() {
       <div className="user-list">
         {data?.results.map((each, index) => {
           const name = `${each.name.title} ${each.name.first} ${each.name.last}`;
+          const location = `${each.location.city}, ${each.location.state}`;
+          const age = each.dob.age;
+          const email = each.email;
+          const pic = each.picture.large;
           return (
-            <li key={name.toLowerCase().replaceAll(" ", "")}>{`${
-              index + 1
-            }.${name}`}</li>
+            <li className="list" key={name.toLowerCase().replaceAll(" ", "")}>
+              {index + 1}.
+              <div className="single-user">
+                <div>
+                  <img src={pic} alt={name} />
+                </div>
+                <div>
+                  <span>Name:</span> {`${name}`}
+                </div>
+                <div>
+                  <span>Location:</span> {`${location}`}
+                </div>
+                <div>
+                  <span>Age:</span> {`${age}`}
+                </div>
+                <div>
+                  <span>Email:</span> {`${email}`}
+                </div>
+              </div>
+            </li>
           );
         })}
-        {
-          <button className="prev"
-            disabled={page <= 1}
-            onClick={() => setPage((prev) => prev - 1)}
-          >
-            prev
-          </button>
-        }
-        {Array.from({ length: pages }, (value, index) => index + 1).map(
-          (each) => (
-            <button onClick={() => setPage(each)}>{each}</button>
-          )
-        )}
-        {
-          <button className="next"
-            disabled={page >= pages}
-            aria-disabled={page >= pages}
-            onClick={() => setPage((prev) => prev + 1)}
-          >
-            next
-          </button>
-        }
-        
+        <div className="pagination">
+          {
+            <button
+              className="prev"
+              disabled={page <= 1}
+              onClick={() => setPage((prev) => prev - 1)}
+            >
+              prev
+            </button>
+          }
+          {Array.from({ length: pages }, (value, index) => index + 1).map(
+            (each) => (
+              <button className="pages" onClick={() => setPage(each)}>
+                {each}
+              </button>
+            )
+          )}
+          {
+            <button
+              className="next"
+              disabled={page >= pages}
+              aria-disabled={page >= pages}
+              onClick={() => setPage((prev) => prev + 1)}
+            >
+              next
+            </button>
+          }
+        </div>
       </div>
     </div>
   );

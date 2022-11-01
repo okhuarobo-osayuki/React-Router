@@ -24,7 +24,7 @@ const useFetch = (url, options) => {
       default:
         return state;
     }
-  };
+  }; 
 
   const [state, dispatch] = useReducer(fetchReducer, initialState);
 

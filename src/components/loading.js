@@ -1,10 +1,8 @@
 import React from "react";
-//create a spinner loading component
 
 function Loader() {
-    <div className="spinner-container">
-      <div className="loading-spinner">
-      </div>
+    <div className="loader">
+      <h1>Loading...</h1>
     </div>
 }
 
