@@ -137,6 +137,7 @@ a:hover {
   border: 0.5px solid #000;
   cursor: pointer;
   transition: 0.5s;
+  margin-right: .1rem;
 }
 
 .pages:hover {
@@ -159,6 +160,11 @@ a:hover {
   cursor: pointer;
   transition: 0.5s;
 }
+
+.prev{
+  margin-right: .12rem;
+}
+
 
 .loader{
   display: flex;
@@ -196,9 +202,22 @@ a:hover {
     padding-left: .9rem;
   }
 
+  .user-list {
+    margin-left: .5rem;
+  }
+
   .single-user{
-    margin-left: 1rem;
-    padding: 0;
+    margin-left: .5rem;
+    padding: .5rem 0 1rem 0;
+  }
+
+  .pages {
+    margin-right: .2rem;
+    margin-top: .2rem;
+  }
+
+  .prev{
+    margin-right: .23rem;
   }
 }
 
